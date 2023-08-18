@@ -25,17 +25,3 @@ Deny from env=bad_bot
 
 # Disable server signature
 ServerSignature Off
-
-# Block access to JavaScript and CSS files
-<FilesMatch "\.(js|css)$">
-  Order deny,allow
-  Deny from all
-</FilesMatch>
-
-# Allow access to JavaScript and CSS files when referred from local URLs
-<FilesMatch "\.(js|css)$">
-  Order allow,deny
-  Allow from localhost
-  Allow from 127.0.0.1
-  Allow from ::1
-</FilesMatch>
