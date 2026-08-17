@@ -1,0 +1,39 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[redirects]]
+  from = "/404"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/forbidden"
+  to = "/forbidden.html"
+  status = 403
+
+# Pretty URLs: rewrites only fire when no real file matches the request path,
+# so actual assets (css/js/img) are served as-is and never hit this rule.
+[[redirects]]
+  from = "/*"
+  to = "/:splat.html"
+  status = 200
