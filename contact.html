@@ -67,7 +67,9 @@
           <h2>Let's connect</h2>
           <p style="margin-top:12px">Questions about the club, membership, or an upcoming event? Drop us a message.</p>
         </div>
-        <form action="https://formsubmit.co/ecgind@gmail.com" method="post" class="contact-form">
+        <form action="https://api.web3forms.com/submit" method="post" class="contact-form">
+          <input type="hidden" name="access_key" value="45aef186-a914-4e3e-87fc-ecd07586f9e5">
+          <input type="checkbox" name="botcheck" class="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field">
             <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="name">
           </div>
@@ -81,8 +83,8 @@
             <textarea name="message" id="message" placeholder="Enter Your Message . . ." required></textarea>
           </div>
           <button type="submit" class="btn">Submit Now</button>
-          <input type="hidden" name="_next" value="https://ecgindore.in/thanks">
-          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="redirect" value="https://ecgindore.in/thanks">
+          <input type="hidden" name="subject" value="New message from ecgindore.in contact form">
         </form>
       </div>
 
